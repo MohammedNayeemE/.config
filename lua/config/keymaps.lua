@@ -33,8 +33,15 @@ keymap("v", ">", ">gv")
 -- Move lines
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
+keymap("v", "<a-k>", ":m '<-2<cr>gv=gv", { desc = "move line up" })
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down" })
-keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up" })
 
 -- Save file
 keymap({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+--- custom
+keymap(
+	"n",
+	"<leader>tt",
+	"otry:<CR>pass<CR><BS>except HTTPException:<CR>raise<CR><BS>except Exception as e:<CR>pass<Esc>"
+)
+keymap("n", "<leader>ee", "oif err != nil {<CR><Tab>return nil<CR>}")
