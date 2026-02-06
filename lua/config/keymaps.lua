@@ -45,3 +45,19 @@ keymap(
 	"otry:<CR>pass<CR><BS>except HTTPException:<CR>raise<CR><BS>except Exception as e:<CR>pass<Esc>"
 )
 keymap("n", "<leader>ee", "oif err != nil {<CR><Tab>return nil<CR>}")
+
+keymap("n", "-", function()
+	if vim.bo.filetype == "oil" then
+		vim.cmd("bd")
+	else
+		vim.cmd("Oil")
+	end
+end, { desc = "Toggle Oil file explorer" })
+
+vim.api.nvim_create_user_command("RunCpp", function()
+	local file = vim.fn.expand("%")
+	local cmd = string.format("g++ %s -o ans && ./ans < input.txt > output.txt && bat output.txt", file)
+	vim.cmd("split | terminal " .. cmd)
+end, {})
+
+keymap("n", "<leader>cmp", "<cmd>RunCpp<CR>", { desc = "Compile & Run C++" })
