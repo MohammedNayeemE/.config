@@ -1,15 +1,16 @@
 -- ~/.config/nvim/lua/plugins/lsp.lua
 
 return {
-	"neovim/nvim-lspconfig",
-	dependencies = {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		{ "j-hui/fidget.nvim", opts = {} },
-		{ "folke/neodev.nvim", opts = {} },
-	},
-	config = function()
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			{ "j-hui/fidget.nvim", opts = {} },
+			{ "folke/neodev.nvim", opts = {} },
+		},
+		config = function()
 		require("mason").setup()
 
 		-- Setup capabilities
@@ -97,7 +98,7 @@ return {
 			"gofumpt",
 			"goimports",
 			"clang-format",
-			"angular-language-server",
+			"jdtls",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -119,4 +120,6 @@ return {
 			},
 		})
 	end,
+	},
+	{ "mfussenegger/nvim-jdtls" },
 }

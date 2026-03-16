@@ -25,6 +25,7 @@ return {
 			go = { "gofumpt", "goimports" },
 			c = { "clang-format" },
 			cpp = {},
+			java = { "google-java-format" },
 		},
 
 		stop_after_first = true,
