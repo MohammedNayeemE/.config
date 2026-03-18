@@ -74,7 +74,8 @@ bindsym $mod+Return exec kitty -e fish
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -229,7 +230,8 @@ bar {
  exec  xinput set-prop "MSFT0002:00 04F3:31AD Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # setup-background image using feh
-exec --no-startup-id feh --bg-scale --zoom fill /home/nayeem/Pictures/white-crystal-background.jpg
+# exec --no-startup-id feh --bg-scale --zoom fill /home/nayeem/Pictures/a_cat_in_a_cup.jpg
+exec_always --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh
 
 #setup brightness 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
