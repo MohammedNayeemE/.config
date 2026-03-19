@@ -1,0 +1,160 @@
+/**
+ * Catppuccin Mocha Theme for Rofi
+ * https://github.com/catppuccin/catppuccin
+ */
+
+* {
+    /* Catppuccin Mocha Colors */
+    rosewater:  #f5e0dc;
+    flamingo:   #f2cdcd;
+    pink:       #f5c2e7;
+    mauve:      #cba6f7;
+    red:        #f38ba8;
+    maroon:     #eba0ac;
+    peach:      #fab387;
+    yellow:     #f9e2af;
+    green:      #a6e3a1;
+    teal:       #94e2d5;
+    sky:        #89dceb;
+    sapphire:   #74c7ec;
+    blue:       #89b4fa;
+    lavender:   #b4befe;
+    text:       #cdd6f4;
+    subtext1:   #bac2de;
+    subtext0:   #a6adc8;
+    overlay2:   #9399b2;
+    overlay1:   #7f849c;
+    overlay0:   #6c7086;
+    surface2:   #585b70;
+    surface1:   #45475a;
+    surface0:   #313244;
+    base:       #1e1e2e;
+    mantle:     #181825;
+    crust:      #11111b;
+
+    /* Theme Settings */
+    background-color:   transparent;
+    text-color:         @text;
+    accent:             @blue;
+    urgent:             @red;
+
+    /* Global */
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    location:           center;
+    width:              500px;
+    border-radius:      12px;
+    background-color:   @base;
+    border:             2px solid;
+    border-color:       @surface1;
+}
+
+mainbox {
+    padding:    12px;
+    spacing:    12px;
+}
+
+inputbar {
+    padding:            10px 16px;
+    spacing:            12px;
+    children:           [ icon-search, entry ];
+    border-radius:      8px;
+    background-color:   @surface0;
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size:       20px;
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder:        "Search...";
+    placeholder-color:  @overlay0;
+}
+
+message {
+    border-radius:      8px;
+    background-color:   @surface0;
+}
+
+textbox {
+    padding:    8px 16px;
+}
+
+listview {
+    lines:          8;
+    columns:        1;
+    fixed-height:   true;
+    spacing:        4px;
+}
+
+element {
+    padding:        10px 16px;
+    spacing:        12px;
+    border-radius:  8px;
+}
+
+element normal normal {
+    background-color:   transparent;
+    text-color:         @text;
+}
+
+element normal urgent {
+    background-color:   transparent;
+    text-color:         @urgent;
+}
+
+element normal active {
+    background-color:   transparent;
+    text-color:         @accent;
+}
+
+element selected normal {
+    background-color:   @surface0;
+    text-color:         @accent;
+}
+
+element selected urgent {
+    background-color:   @urgent;
+    text-color:         @base;
+}
+
+element selected active {
+    background-color:   @accent;
+    text-color:         @base;
+}
+
+element-icon {
+    size:           24px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color:     inherit;
+    vertical-align: 0.5;
+}
+
+/* Mode Switcher */
+mode-switcher {
+    padding:        4px;
+    spacing:        4px;
+    border-radius:  8px;
+    background-color: @surface0;
+}
+
+button {
+    padding:        8px 16px;
+    border-radius:  6px;
+    text-color:     @subtext0;
+}
+
+button selected {
+    background-color:   @surface1;
+    text-color:         @accent;
+}

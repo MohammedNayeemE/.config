@@ -1,0 +1,49 @@
+/**
+ * Rofi Configuration
+ * Theme: Catppuccin Mocha
+ */
+
+configuration {
+    /* Display Settings */
+    modes:              "drun,run,window";
+    font:               "FiraCode Nerd Font 12";
+    show-icons:         true;
+    icon-theme:         "Papirus-Dark";
+    
+    /* Window */
+    terminal:           "alacritty";
+    location:           0;
+    
+    /* Matching */
+    matching:           "fuzzy";
+    sort:               true;
+    sorting-method:     "fzf";
+    case-sensitive:     false;
+    
+    /* History */
+    disable-history:    false;
+    max-history-size:   25;
+    
+    /* drun settings */
+    drun-display-format:    "{name}";
+    drun-match-fields:      "name,generic,exec,categories,keywords";
+    
+    /* Window switcher */
+    window-format:      "{w} {c} {t}";
+    
+    /* Misc */
+    scroll-method:      0;
+    click-to-exit:      true;
+    
+    /* Keybindings */
+    kb-remove-to-eol:       "";
+    kb-accept-entry:        "Return,KP_Enter";
+    kb-row-up:              "Up,Control+k";
+    kb-row-down:            "Down,Control+j";
+    kb-mode-next:           "Control+Tab";
+    kb-mode-previous:       "Control+Shift+Tab";
+    kb-remove-char-back:    "BackSpace";
+}
+
+/* Apply Theme */
+@theme "~/.config/rofi/catppuccin-mocha.rasi"
